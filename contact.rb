@@ -16,7 +16,7 @@ class Contact
   def self.create(first_name, last_name, email, note)
     new_contact = Contact.new(first_name, last_name, email, note)
     @@contacts << new_contact
-  return new_contact
+    return new_contact
   end
 
     def self.all
@@ -30,7 +30,7 @@ class Contact
         end 
       end 
     end
-  
+
     def self.find_by(attribute, value)
       @@contacts.each do |contact|
         if attribute == "first_name" && contact.first_name == value 
@@ -49,7 +49,7 @@ class Contact
     end
 # ----------------------------------------------------------------------------------------------  
     def full_name
-    return "#{@first_name} #{@last_name}"
+      return "#{@first_name} #{@last_name}"
     end
    
     def update(attribute, value)   
@@ -84,3 +84,4 @@ class Contact
 # p contact_b
 # contact_e.delete
 # p Contact.all 
+
