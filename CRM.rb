@@ -35,7 +35,7 @@ class CRM
         end
     end
 #---------------------------------------------------------------#  
-# *my new contacts arn't saving!
+
     def add_new_contact
         print 'Enter First Name:'
         first_name = gets.chomp 
@@ -52,12 +52,12 @@ class CRM
         Contact.create(first_name, last_name, email, note)
     end
 
-# ERROR with the last code    
+    
     def modify_existing_contact
         print 'Enter an id: '
-        id = gets.chomp
+        id = gets.chomp.to_i
         contact_to_modify = Contact.find(id)  
-        
+       puts contact_to_modify.first_name
         puts "Select which attribute to change: "
         puts "[1] First Name"
         puts "[2] Last Name"
@@ -77,7 +77,7 @@ class CRM
         value = gets.chomp 
 
         contact_to_modify.update(attribute, value) 
-        
+       
     end 
   
     def delete_contact    
@@ -114,10 +114,8 @@ class CRM
   end
 
   
-crm_instance1 = CRM.new("one")
-# p crm_instance1
-# crm_instance1.display_all_contacts
+a_crm_app = CRM.new("one")
+a_crm_app.main_menu
 
-# I DONT UNDERSTNAD THE OBJECT/ INSTANCE OF THIS CODE D:
 
 
